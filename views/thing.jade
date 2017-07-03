@@ -5,20 +5,21 @@ block mainContent
   div.well=thing.description
   #thing.row
     .col-md-4.col-md-offset-2
-      h3 Input of
-      ul.input
-        each module in thing.inputOf
-          div.list-group-item
-            //a(href="/thing/" + thing.id + "/remove/input/" + module.id )
-              button(type="button", class="close", aria-hidden="true") &times;
-            p.list-group-item-text
-              a(href="/module/" + module.id)=module.name
-    .col-md-4
       h3 Output of
       ul.output
         each module in thing.outputOf
           div.list-group-item
             //a(href="/thing/" + thing.id + "/remove/output/" + module.id )
+              button(type="button", class="close", aria-hidden="true") &times;
+            p.list-group-item-text
+              a(href="/module/" + module.id)=module.name
+
+    .col-md-4
+      h3 Input of
+      ul.input
+        each module in thing.inputOf
+          div.list-group-item
+            //a(href="/thing/" + thing.id + "/remove/input/" + module.id )
               button(type="button", class="close", aria-hidden="true") &times;
             p.list-group-item-text
               a(href="/module/" + module.id)=module.name
