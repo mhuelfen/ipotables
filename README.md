@@ -5,7 +5,7 @@ first prototype implementing concepts described on http://ipotables.net
 
 # Demo Application
 
-https://ipo.fragmurphy.de
+https://ipo-tables.herokuapp.com
 
 # Development
 
