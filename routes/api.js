@@ -54,4 +54,34 @@ router.get('/search', function(req, res) {
 });
 
 
+/* Search things  */
+router.get('/search/things', function(req, res) {
+  var debug = true;
+
+  // TODO: Filter query string
+  Thing.search(req.query.q, function(err, things){
+    if(err){
+      if(debug) console.log('Thing Search Error: ', err);
+      res.json({ error: err });
+      return;      
+    }
+
+    if(debug) console.log('Thing Results: ', things);
+    if(debug) console.log('Thing First Result: ', things[0]);
+
+    var results = {}
+
+    // Reduce things db result to json data
+    if(things){
+      results = things.map(function(result){
+        var thing = result.thing._data.data;
+        thing.id = result.thing._data.metadata.id
+        return thing;
+      });
+    }
+    res.json(results);
+  }, true);
+});
+
+
 module.exports = router;

@@ -2,6 +2,12 @@ extends layout
 
 include io_form
 
+block stylecheats
+  link(rel='stylesheet', href='/stylesheets/easy-autocomplete.min.css') 
+
+block scripts
+  script(src='/javascripts/jquery.easy-autocomplete.min.js')
+
 block mainContent
   block moduleView
   #module.row

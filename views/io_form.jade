@@ -2,5 +2,7 @@ mixin io_form(type,module)
   div
     form.inline-form(method="POST",action="/module/"+module.id+"/add/"+type)
       .form-group
-        input(placeholder="Thing name",name="name")
+        input(placeholder="Thing name",id=type,name="name")
         input(type="submit",value="Add")
+
+    script(src='/javascripts/thingcomplete.js')
